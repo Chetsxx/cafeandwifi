@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Cafe and Wifi{% endblock %}
+
+{% block content %}
+  <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg fixed-top opacity-100" id="mainNav", style="background-color: #733B2F;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">CAFE AND WIFI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Cafe List</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Add Cafe</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+<header class="masthead" style="background-image: url(../static/images/wallpaper2.jpg)">
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <div class="overlay-text"><h1>CAFE AND WIFI</h1></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="bg" style="background-image: url(../static/images/bg.jpg);">
+<div class="container">
+    <div class="row">
+        {% for cafe in cafes %}
+        <div class="col-lg-4 col-sm-6">
+            <div class="card bg-light mb-3">
+                <img class="card-img-top img-thumbnail" src="{{ cafe.img_url }}" alt="Card image cap", style="height:250px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ cafe.name }}</h5>
+                    <p class="card-text">{{ cafe.location }} | {{ cafe.coffee_price }} | {{ cafe.seats }}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

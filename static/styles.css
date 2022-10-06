@@ -1,0 +1,73 @@
+header.masthead {
+  background: no-repeat center center;
+  background-color: #733B2F;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #733B2F;
+  opacity: 0.3;
+}
+
+header.masthead .site-heading {
+  padding: 35% 35% 35% 35%;
+  color: #FFB95E;
+  font-family: 'Secular One', sans-serif;
+}
+
+.overlay-text {
+  position: absolute;
+  z-index: 200;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.overlay-text:after {
+  z-index: 200;
+}
+
+body {
+  font-size: 1rem;
+  color: #212529;
+}
+
+h1 {
+  text-align: center;
+  font-size: 6rem;
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+a.navbar-brand{
+    color: #FFB95E;
+    font-family: 'Roboto', sans-serif;
+}
+
+a.nav-link {
+    color: #FFB95E;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media( max-width: 1200px){
+    header{
+        /*margin: 20px;*/
+      overflow: auto;
+    }
+}
+
+.container-fluid{
+    height: 100vh;
+}
