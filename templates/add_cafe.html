@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Add Cafe{% endblock %}
+
+{% block content %}
+<section id="addcafe">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <h3>Add a new cafe into the database</h3>
+                <br>
+                <form method="POST" action="{{ url_for('add_cafe') }}" novalidate>
+                    {{ form.csrf_token }}
+
+                    <div>{{ form.cafe.label }} <br> {{ form.cafe(class="form-control") }}
+                        {% if form.cafe.errors %}
+                        <span class="errors">{% for error in form.cafe.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.location.label }} <br> {{ form.location(class="form-control") }} {% if
+                        form.location.errors %}
+                        <span class="errors">{% for error in form.location.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+
+                    <br>
+                    <div>{{ form.map.label }} <br> {{ form.map(class="form-control") }} {% if form.map.errors %}
+                        <span class="errors">{% for error in form.map.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.img.label }} <br> {{ form.img(class="form-control") }} {% if form.img.errors %}
+                        <span class="errors">{% for error in form.img.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.seats.label }} <br> {{ form.seats(class="form-control") }} {% if form.seats.errors %}
+                        <span class="errors">{% for error in form.seats.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.coffee_price.label }} <br> {{ form.coffee_price(class="form-control") }} {% if
+                        form.coffee_price.errors %}
+                        <span class="errors">{% for error in form.coffee_price.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.toilet.label }} <br> {{ form.toilet(class="form-control") }} {% if form.toilet.errors
+                        %}
+                        <span class="errors">{% for error in form.toilet.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.wifi.label }} <br> {{ form.wifi(class="form-control") }} {% if form.wifi.errors %}
+                        <span class="errors">{% for error in form.wifi.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.power.label }} <br> {{ form.power(class="form-control") }} {% if form.power.errors %}
+                        <span class="errors">{% for error in form.power.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.calls.label }} <br> {{ form.calls(class="form-control") }} {% if form.calls.errors %}
+                        <span class="errors">{% for error in form.calls.errors %}<span>{{ error }}</span>{% endfor %}</span>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div>{{ form.submit(class="btn btn-warning") }}</div>
+                </form>
+
+                <p class="space-above"><a href="http://127.0.0.1:5000/#coffee-shops">See all cafes</a></p>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
