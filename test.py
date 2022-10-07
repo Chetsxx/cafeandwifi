@@ -22,3 +22,11 @@ for cafe in cafes:
 
 # collection-based relationships are by default named
 # "<classname>_collection"
+
+#                 <!--{% extends 'bootstrap/base.html' %}-->
+# <!--{% import 'bootstrap/wtf.html' as wtf %}-->
+# <!--{% block styles %}-->
+# <!--{{super()}}-->
+# <!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+# <!--{% endblock %}-->
+# <!--                      {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "warning text-dark"}) }}-->

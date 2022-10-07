@@ -1,3 +1,17 @@
+body {
+  font-size: 1rem;
+  color: #212529;
+}
+
+h1 {
+  text-align: center;
+  font-size: 6rem;
+  flex-wrap: wrap;
+}
+
+
+/* FRONT */
+
 header.masthead {
   background: no-repeat center center;
   background-color: #733B2F;
@@ -35,20 +49,15 @@ header.masthead .site-heading {
   z-index: 200;
 }
 
-body {
-  font-size: 1rem;
-  color: #212529;
-}
 
-h1 {
-  text-align: center;
-  font-size: 6rem;
-}
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     h1 {
-        font-size: 3rem;
+        font-size: 5rem;
+        overflow-wrap: break-word;
     }
+
+
+
 }
 
 a.navbar-brand{
@@ -61,7 +70,7 @@ a.nav-link {
     font-family: 'Roboto', sans-serif;
 }
 
-@media( max-width: 1200px){
+@media(max-width: 1200px){
     header{
         /*margin: 20px;*/
       overflow: auto;
@@ -70,4 +79,65 @@ a.nav-link {
 
 .container-fluid{
     height: 100vh;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #0D0000;
+}
+
+.section-title h2::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #733B2F;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+.space-above {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+#addcafe {
+    box-shadow: inset 0 0 0 2000px RGBA(41,0,0,0.80);
+    color: #FFB95E;
+    font-family: 'Roboto', sans-serif;
+}
+
+.errors {
+    color:red;
 }
