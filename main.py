@@ -1,5 +1,4 @@
 from flask import Flask, render_template, redirect, url_for, request
-from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
