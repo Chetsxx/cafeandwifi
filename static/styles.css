@@ -70,6 +70,14 @@ a.nav-link {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    color: #FFB95E;
+}
+
+a:hover {
+  color: #733B2F;
+}
+
 @media(max-width: 1200px){
     header{
         /*margin: 20px;*/
@@ -141,3 +149,4 @@ section {
 .errors {
     color:red;
 }
+

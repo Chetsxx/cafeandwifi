@@ -14,11 +14,12 @@ app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 Bootstrap(app)
 
 Base = automap_base()
-engine = create_engine("sqlite:///cafes.db")
+engine = create_engine("sqlite:///cafes.db", connect_args={"check_same_thread": False})
 Base.prepare(autoload_with=engine)
 Cafe = Base.classes.cafe
 session = Session(engine)
 cafes = session.query(Cafe).all()
+
 
 class AddCafe(FlaskForm):
     cafe = StringField('Cafe name', validators=[DataRequired()])
@@ -40,10 +41,11 @@ def home():
 
 @app.route("/delete-cafe")
 def delete():
-    cafe_id = request.args.get("id")
-    cafe = Cafe.query.get(cafe_id)
-    session.delete(cafe)
-    session.commit()
+    cafe_name = request.args.get("name")
+    for cafe in cafes:
+        if cafe.name == cafe_name:
+            session.delete(cafe)
+            session.commit()
     return redirect(url_for('home'))
 
 @app.route("/add-cafe", methods=["GET", 'POST'])
